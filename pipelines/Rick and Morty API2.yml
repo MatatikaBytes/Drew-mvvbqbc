@@ -1,10 +1,7 @@
 version: pipelines/v0.1
-name: Rick and Morty API
+name: Rick and Morty API2
 timeout: 0
 data_components:
 - tap-rickandmorty
 - Warehouse
 - dbt
-- target-athena
-actions:
-- target-postgres

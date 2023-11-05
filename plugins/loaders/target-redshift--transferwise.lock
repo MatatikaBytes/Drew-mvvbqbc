@@ -1,0 +1,254 @@
+{
+  "plugin_type": "loaders",
+  "name": "target-redshift",
+  "namespace": "target_redshift",
+  "variant": "transferwise",
+  "label": "Amazon Redshift",
+  "docs": "https://www.matatika.com/data-details/target-redshift/",
+  "repo": "https://github.com/transferwise/pipelinewise-target-redshift",
+  "pip_url": "pipelinewise-target-redshift",
+  "executable": "target-redshift",
+  "description": "Amazon Redshift is a cloud-based data warehousing service. \n\nAmazon Redshift allows businesses to store and analyze large amounts of data in a cost-effective and scalable way. It can handle petabyte-scale data warehouses and offers fast query performance using SQL. It also integrates with other AWS services such as S3, EMR, and Kinesis. With Redshift, businesses can easily manage their data and gain insights to make informed decisions.",
+  "logo_url": "https://app.matatika.com/assets/logos/loaders/redshift.png",
+  "capabilities": [
+    "activate_version",
+    "soft_delete",
+    "record_flattening",
+    "datatype_failsafe",
+    "hard_delete"
+  ],
+  "settings": [
+    {
+      "name": "host",
+      "kind": "string",
+      "label": "Host",
+      "description": "The endpoint URL for the Amazon Redshift cluster.",
+      "protected": false
+    },
+    {
+      "name": "port",
+      "kind": "integer",
+      "value": 5439,
+      "label": "Port",
+      "description": "The port number on which the Amazon Redshift cluster is listening.",
+      "protected": false
+    },
+    {
+      "name": "dbname",
+      "kind": "string",
+      "label": "Database Name",
+      "description": "The name of the Amazon Redshift database to connect to.",
+      "protected": false
+    },
+    {
+      "name": "user",
+      "kind": "string",
+      "label": "User name",
+      "description": "The user name to use when connecting to the Amazon Redshift cluster.",
+      "protected": false
+    },
+    {
+      "name": "password",
+      "kind": "password",
+      "label": "Password",
+      "description": "The password to use when connecting to the Amazon Redshift cluster.",
+      "protected": false
+    },
+    {
+      "name": "s3_bucket",
+      "kind": "string",
+      "label": "S3 Bucket name",
+      "description": "The name of the Amazon S3 bucket where the data to be loaded into Amazon Redshift is stored.",
+      "protected": false
+    },
+    {
+      "name": "default_target_schema",
+      "kind": "string",
+      "value": "$MELTANO_EXTRACT__LOAD_SCHEMA",
+      "label": "Default Target Schema",
+      "description": "The default schema to use when loading data into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "aws_profile",
+      "kind": "string",
+      "label": "AWS Profile Name",
+      "description": "The name of the AWS profile to use when connecting to Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "aws_access_key_id",
+      "kind": "password",
+      "label": "AWS S3 Access Key ID",
+      "description": "The access key ID for the AWS account that owns the Amazon S3 bucket.",
+      "protected": false
+    },
+    {
+      "name": "aws_secret_access_key",
+      "kind": "password",
+      "label": "AWS S3 Secret Access Key",
+      "description": "The secret access key for the AWS account that owns the Amazon S3 bucket.",
+      "protected": false
+    },
+    {
+      "name": "aws_session_token",
+      "kind": "password",
+      "label": "AWS S3 Session Token",
+      "description": "The session token for the AWS account that owns the Amazon S3 bucket.",
+      "protected": false
+    },
+    {
+      "name": "aws_redshift_copy_role_arn",
+      "kind": "string",
+      "label": "AWS Redshift COPY role ARN",
+      "description": "The ARN of the AWS Identity and Access Management (IAM) role to use when loading data into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "s3_acl",
+      "kind": "string",
+      "label": "AWS S3 ACL",
+      "description": "The access control list (ACL) to apply to the Amazon S3 objects being loaded into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "s3_key_prefix",
+      "kind": "string",
+      "label": "S3 Key Prefix",
+      "description": "The prefix to apply to the Amazon S3 object keys being loaded into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "copy_options",
+      "kind": "string",
+      "value": "EMPTYASNULL BLANKSASNULL TRIMBLANKS TRUNCATECOLUMNS TIMEFORMAT 'auto' COMPUPDATE OFF STATUPDATE OFF",
+      "label": "COPY options",
+      "description": "Additional options to use when loading data into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "batch_size_rows",
+      "kind": "integer",
+      "value": 100000,
+      "label": "Batch Size Rows",
+      "description": "The number of rows to load into Amazon Redshift at a time.",
+      "protected": false
+    },
+    {
+      "name": "flush_all_streams",
+      "kind": "boolean",
+      "value": false,
+      "label": "Flush All Streams",
+      "description": "Whether to flush all streams to Amazon Redshift before disconnecting.",
+      "protected": false
+    },
+    {
+      "name": "parallelism",
+      "kind": "integer",
+      "value": 0,
+      "label": "Parallelism",
+      "description": "The number of streams to use when loading data into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "max_parallelism",
+      "kind": "integer",
+      "value": 16,
+      "label": "Max Parallelism",
+      "description": "The maximum number of streams to use when loading data into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "default_target_schema_select_permissions",
+      "kind": "string",
+      "label": "Default Target Schema Select Permission",
+      "description": "The permission to use when selecting data from the default target schema.",
+      "protected": false
+    },
+    {
+      "name": "schema_mapping",
+      "kind": "object",
+      "label": "Scema Mapping",
+      "description": "A mapping of source schema names to target schema names.",
+      "protected": false
+    },
+    {
+      "name": "disable_table_cache",
+      "kind": "boolean",
+      "value": false,
+      "label": "Disable Table Cache",
+      "description": "Whether to disable the table cache when loading data into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "add_metadata_columns",
+      "kind": "boolean",
+      "value": false,
+      "label": "Add Metdata Columns",
+      "description": "Whether to add metadata columns to the Amazon Redshift table being loaded.",
+      "protected": false
+    },
+    {
+      "name": "hard_delete",
+      "kind": "boolean",
+      "value": false,
+      "label": "Hard Delete",
+      "description": "Whether to perform a hard delete when deleting data from Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "data_flattening_max_level",
+      "kind": "integer",
+      "value": 0,
+      "label": "Data Flattening Max Level",
+      "description": "The maximum level of data flattening to perform when loading data into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "primary_key_required",
+      "kind": "boolean",
+      "value": true,
+      "label": "Primary Key Required",
+      "description": "Whether a primary key is required when loading data into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "validate_records",
+      "kind": "boolean",
+      "value": false,
+      "label": "Validate Records",
+      "description": "Whether to validate records before loading them into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "skip_updates",
+      "kind": "boolean",
+      "value": false,
+      "label": "Skip Updates",
+      "description": "Whether to skip updates when loading data into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "compression",
+      "kind": "options",
+      "label": "Compression",
+      "description": "The compression type to use when loading data into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "slices",
+      "kind": "integer",
+      "value": 1,
+      "label": "Slices",
+      "description": "The number of slices to use when loading data into Amazon Redshift.",
+      "protected": false
+    },
+    {
+      "name": "temp_dir",
+      "kind": "string",
+      "label": "Temp Directory",
+      "description": "The directory to use for temporary files when loading data into Amazon Redshift.",
+      "protected": false
+    }
+  ]
+}

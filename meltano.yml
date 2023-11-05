@@ -17,6 +17,9 @@ plugins:
   - name: target-athena
     variant: meltanolabs
     pip_url: git+https://github.com/MeltanoLabs/target-athena.git
+  - name: target-redshift
+    variant: transferwise
+    pip_url: pipelinewise-target-redshift
   transformers:
   - name: dbt
     variant: dbt-labs

@@ -14,6 +14,9 @@ plugins:
   - name: target-postgres
     variant: matatika
     pip_url: git+https://github.com/Matatika/pipelinewise-target-postgres@v0.1.0
+  - name: target-athena
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/target-athena.git
   transformers:
   - name: dbt
     variant: dbt-labs

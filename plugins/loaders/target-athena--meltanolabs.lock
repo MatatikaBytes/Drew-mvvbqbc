@@ -1,0 +1,151 @@
+{
+  "plugin_type": "loaders",
+  "name": "target-athena",
+  "namespace": "target_athena",
+  "variant": "meltanolabs",
+  "label": "Amazon Athena",
+  "docs": "https://www.matatika.com/data-details/target-athena/",
+  "repo": "https://github.com/MeltanoLabs/target-athena",
+  "pip_url": "git+https://github.com/MeltanoLabs/target-athena.git",
+  "description": "Amazon Athena is a serverless interactive query service that enables users to analyze data in Amazon S3 using standard SQL. \n\nAmazon Athena allows users to easily analyze data stored in Amazon S3 using standard SQL queries. It is a serverless service, meaning that users do not need to manage any infrastructure or servers. Instead, they simply point Athena at their data stored in S3 and run SQL queries to extract insights. Athena is designed to handle large datasets and can scale automatically to accommodate growing data volumes. It also integrates with other AWS services, such as Amazon QuickSight, to provide users with powerful data visualization capabilities. Overall, Amazon Athena is a powerful tool for data analysts and data scientists looking to extract insights from large datasets stored in Amazon S3.",
+  "logo_url": "https://app.matatika.com/assets/logos/loaders/athena.png",
+  "capabilities": [
+    "about",
+    "stream_maps"
+  ],
+  "settings": [
+    {
+      "name": "athena_database",
+      "kind": "string",
+      "label": "Athena Database",
+      "description": "The name of the database in Amazon Athena to connect to.",
+      "protected": false
+    },
+    {
+      "name": "aws_region",
+      "kind": "string",
+      "label": "AWS Region",
+      "description": "The AWS region where the Amazon Athena API is located.",
+      "protected": false
+    },
+    {
+      "name": "aws_access_key_id",
+      "kind": "password",
+      "label": "AWS S3 Access Key ID",
+      "description": "The access key ID for the AWS S3 bucket used for storing data.",
+      "protected": false
+    },
+    {
+      "name": "aws_secret_access_key",
+      "kind": "password",
+      "label": "AWS S3 Secret Access Key",
+      "description": "The secret access key for the AWS S3 bucket used for storing data.",
+      "protected": false
+    },
+    {
+      "name": "aws_session_token",
+      "kind": "password",
+      "label": "AWS S3 Session Token",
+      "description": "The session token for the AWS S3 bucket used for storing data.",
+      "protected": false
+    },
+    {
+      "name": "aws_profile",
+      "kind": "string",
+      "label": "AWS profile name",
+      "description": "The name of the AWS profile to use for authentication.",
+      "protected": false
+    },
+    {
+      "name": "s3_bucket",
+      "kind": "string",
+      "label": "Bucket",
+      "description": "The name of the AWS S3 bucket used for storing data.",
+      "protected": false
+    },
+    {
+      "name": "s3_key_prefix",
+      "kind": "string",
+      "label": "S3 Key Prefix",
+      "description": "The prefix to use for S3 keys when storing data.",
+      "protected": false
+    },
+    {
+      "name": "s3_staging_dir",
+      "kind": "string",
+      "label": "S3 Staging Directory",
+      "description": "The S3 directory to use for temporary files when querying data.",
+      "protected": false
+    },
+    {
+      "name": "delimiter",
+      "kind": "string",
+      "label": "Delimiter",
+      "description": "The delimiter used in the data being queried.",
+      "protected": false
+    },
+    {
+      "name": "quotechar",
+      "kind": "string",
+      "label": "Quote Character",
+      "description": "The character used to quote fields in the data being queried.",
+      "protected": false
+    },
+    {
+      "name": "add_record_metadata",
+      "kind": "boolean",
+      "label": "Add Record Metadata",
+      "description": "Whether or not to add metadata to the records returned by the query.",
+      "protected": false
+    },
+    {
+      "name": "encryption_type",
+      "kind": "string",
+      "label": "Encryption Type",
+      "description": "The type of encryption used for data stored in the S3 bucket.",
+      "protected": false
+    },
+    {
+      "name": "encryption_key",
+      "kind": "string",
+      "label": "Encryption Key",
+      "description": "The encryption key used for data stored in the S3 bucket.",
+      "protected": false
+    },
+    {
+      "name": "compression",
+      "kind": "string",
+      "label": "Compression",
+      "description": "The compression format used for data stored in the S3 bucket.",
+      "protected": false
+    },
+    {
+      "name": "naming_convention",
+      "kind": "string",
+      "label": "Naming Convention",
+      "description": "The naming convention used for temporary files created during query execution.",
+      "protected": false
+    },
+    {
+      "name": "temp_dir",
+      "kind": "string",
+      "label": "Temp Directory",
+      "description": "The local directory to use for temporary files during query execution.",
+      "protected": false
+    },
+    {
+      "name": "object_format",
+      "kind": "string",
+      "label": "Object Format",
+      "description": "The format of the objects stored in the S3 bucket.",
+      "protected": false
+    },
+    {
+      "name": "flatten_records",
+      "kind": "boolean",
+      "label": "Flattten Records",
+      "description": "Whether or not to flatten nested records in the data being queried.",
+      "protected": false
+    }
+  ]
+}

@@ -5,3 +5,5 @@ data_components:
 - tap-rickandmorty
 - Warehouse
 - dbt
+actions:
+- target-postgres

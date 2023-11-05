@@ -1,0 +1,108 @@
+{
+  "plugin_type": "loaders",
+  "name": "target-s3csv",
+  "namespace": "pipelinewise_target_s3_csv",
+  "variant": "transferwise",
+  "label": "S3 CSV",
+  "docs": "https://www.matatika.com/data-details/target-s3csv/",
+  "repo": "https://github.com/transferwise/pipelinewise-target-s3-csv",
+  "pip_url": "git+https://github.com/transferwise/pipelinewise-target-s3-csv.git",
+  "description": "S3 CSV is a file format used for storing data in Amazon S3.\n\nAmazon S3 is a cloud-based storage service that allows users to store and retrieve data from anywhere on the web. S3 CSV is a file format used for storing data in S3 that is organized in rows and columns, similar to a spreadsheet. This format is commonly used for storing large amounts of data that can be easily accessed and analyzed using various tools and applications. S3 CSV files can be easily imported and exported to other applications, making it a popular choice for data storage and analysis in the cloud.\n### Prerequisites\nTo obtain the AWS Access Key Id and AWS Secret Access Key, you need to go to the AWS Management Console, navigate to the IAM service, and create an IAM user with programmatic access. During the user creation process, you will be provided with the Access Key Id and Secret Access Key.\n\nTo obtain the S3 Bucket name, you need to navigate to the S3 service in the AWS Management Console and select the bucket that contains the CSV file you want to connect to. The name of the bucket will be displayed in the bucket details page.",
+  "logo_url": "https://app.matatika.com/assets/logos/extractors/s3-csv.png",
+  "settings": [
+    {
+      "name": "aws_access_key_id",
+      "kind": "password",
+      "label": "AWS Access Key Id",
+      "description": "The access key ID for the AWS account.",
+      "protected": false,
+      "required": "true"
+    },
+    {
+      "name": "aws_secret_access_key",
+      "kind": "password",
+      "label": "AWS Secret Access Key",
+      "description": "The secret access key for the AWS account.",
+      "protected": false,
+      "required": "true"
+    },
+    {
+      "name": "aws_session_token",
+      "kind": "password",
+      "label": "AWS Session token",
+      "description": "The session token for the AWS account.",
+      "protected": false
+    },
+    {
+      "name": "aws_endpoint_url",
+      "kind": "string",
+      "label": "AWS endpoint URL",
+      "description": "The endpoint URL for the S3 bucket.",
+      "protected": false
+    },
+    {
+      "name": "aws_profile",
+      "kind": "string",
+      "label": "AWS profile",
+      "description": "The name of the AWS profile to use.",
+      "protected": false
+    },
+    {
+      "name": "s3_bucket",
+      "kind": "string",
+      "label": "S3 Bucket name",
+      "description": "The name of the S3 bucket to connect to.",
+      "protected": false,
+      "required": "true"
+    },
+    {
+      "name": "s3_key_prefix",
+      "kind": "string",
+      "label": "S3 Key Prefix",
+      "description": "The prefix for the S3 keys to read.",
+      "protected": false
+    },
+    {
+      "name": "delimiter",
+      "kind": "string",
+      "label": "delimiter",
+      "description": "The delimiter used in the CSV file.",
+      "protected": false
+    },
+    {
+      "name": "quotechar",
+      "kind": "string",
+      "label": "Quote Char",
+      "description": "The character used to quote fields in the CSV file.",
+      "protected": false
+    },
+    {
+      "name": "add_metadata_columns",
+      "kind": "boolean",
+      "label": "Add Metadata Columns",
+      "description": "Whether to add metadata columns to the output.",
+      "protected": false
+    },
+    {
+      "name": "encryption_type",
+      "kind": "string",
+      "label": "Encryption Type",
+      "description": "The type of encryption used for the S3 bucket.",
+      "protected": false
+    },
+    {
+      "name": "compression",
+      "kind": "string",
+      "label": "Compression",
+      "description": "The compression type used for the CSV file.",
+      "protected": false
+    },
+    {
+      "name": "naming_convention",
+      "kind": "string",
+      "label": "Naming Convention",
+      "description": "The naming convention used for the output files.",
+      "protected": false
+    }
+  ]
+}

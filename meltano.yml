@@ -20,6 +20,9 @@ plugins:
   - name: target-redshift
     variant: transferwise
     pip_url: pipelinewise-target-redshift
+  - name: target-s3csv
+    variant: transferwise
+    pip_url: git+https://github.com/transferwise/pipelinewise-target-s3-csv.git
   transformers:
   - name: dbt
     variant: dbt-labs
